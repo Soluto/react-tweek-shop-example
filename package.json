@@ -1,0 +1,25 @@
+{
+  "name": "react-tweek-shop-example",
+  "version": "0.1.0",
+  "author": "Soluto",
+  "license": "MIT",
+  "url": "https://github.com/Soluto/react-tweek-shop-example",
+  "repository": "Soluto/react-tweek-shop-example",
+  "dependencies": {
+    "glamor": "^2.20.40",
+    "glamorous": "^4.9.5",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.13",
+    "react-tweek": "^0.2.1",
+    "recompose": "^0.25.0",
+    "tweek-client": "^0.1.6",
+    "tweek-local-cache": "^0.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start:full-env": "cd ../../ && docker-compose up -d tweek-editor && cd - && yarn start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  }
+}

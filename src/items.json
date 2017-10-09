@@ -1,0 +1,86 @@
+[
+  {
+    "id": "tweek-watch",
+    "displayName": "Tweek Watch",
+    "description": "A computerized wristwatch with functionality that goes beyond timekeeping, such as time travel",
+    "price": "1337.00",
+    "rating": 4.9,
+    "image": "/images/tweek-watch.png"
+  },
+  {
+    "id": "tweek-phone",
+    "displayName": "Tweek Phone",
+    "description": "A portable personal computer with a mobile operating system with features useful for handheld use",
+    "price": 799.99,
+    "rating": 4.3,
+    "image": "/images/tweek-phone.jpg"
+  },
+  {
+    "id": "rubber-duck",
+    "displayName": "Rubber Duck",
+    "description": "A rubber duck that will keep all your secrets",
+    "price": "9.90",
+    "rating": 5,
+    "image": "/images/rubber-duck.jpg"
+  },
+  {
+    "id": "round-transportation-device",
+    "displayName": "Round Transportation Device",
+    "description": "It's actually just a wheel",
+    "price": "200.00",
+    "rating": 5,
+    "image": "/images/round-transportation-device.png"
+  },
+  {
+    "id": "sonic-screwdriver",
+    "displayName": "Sonic Screwdriver",
+    "description":
+      "A multifunctional tool that can hack, disable, activate, and otherwise control technology from almost every era",
+    "price": "60.00",
+    "rating": 3.8,
+    "image": "/images/sonic-screwdriver.jpg"
+  },
+  {
+    "id": "star-destroyer",
+    "displayName": "Star Destroyer",
+    "description":
+      "A moon-sized, deep-space mobile battle station, designed to fire a single planet-destroying superlaser powered by massive kyber crystals",
+    "price": "850000000000000000.01",
+    "rating": 2.3,
+    "image": "/images/star-destroyer.png"
+  },
+  {
+    "id": "energy-matter-scrambler",
+    "displayName": "Energy-Matter Scrambler",
+    "description": "A subspace device capable of almost instantaneously moving an object from one location to another",
+    "price": "12001.50",
+    "rating": 3.9,
+    "image": "/images/energy-matter-scrambler.jpg"
+  },
+  {
+    "id": "protoss-pylon",
+    "displayName": "Protoss Pylon",
+    "description":
+      "Each pylon generates a short-ranged aura of energy, which can provide the power needed by structures and warp gates",
+    "price": 85.15,
+    "rating": 3.1,
+    "image": "/images/protoss-pylon.png"
+  },
+  {
+    "id": "magic-wand",
+    "displayName": "Magic Wand",
+    "description":
+      "A thin, hand-held stick that may be transformed into other items, grow, vanish, move, display a will of its own, or behave magically in its own right",
+    "price": 134.16,
+    "rating": 4.0,
+    "image": "/images/magic-wand.jpg"
+  },
+  {
+    "id": "one-ring",
+    "displayName": "One Ring",
+    "description": "One of the most powerful artifacts ever created in Middle-earth",
+    "price": 8654.98,
+    "rating": 4.9,
+    "image": "/images/one-ring.png"
+  }
+]
