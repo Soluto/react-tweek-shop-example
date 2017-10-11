@@ -54,7 +54,7 @@ const Product = ({ displayName, image, description, price, rating }) => (
     <Description>{description}</Description>
     <Price>{price}</Price>
     <Rating rating={rating} />
-    <Thumbnail src={image} alt={displayName} />
+    <Thumbnail src={`https://raw.githubusercontent.com/Soluto/react-tweek-shop-example/master/public/${image}`} alt={displayName} />
   </Container>
 );
 
