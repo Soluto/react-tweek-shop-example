@@ -10,22 +10,18 @@ import config from './config.json';
 
 const baseServiceUrl = config.TweekUrl;
 
-function createTweekRepo(){
+function createTweekRepo() {
   const tweekClient = createTweekClient({ baseServiceUrl });
   const tweekRepo = new TweekLocalCache({ client: tweekClient });
-  
-  /*
+
   tweekRepo.context = {
     user: {
       id: "john"
     }
   };
-  */
 
-  // experimental - for hot reloading
-  const tweekWatcher = watchVersion(baseServiceUrl);
-  tweekWatcher.subscribe(() => tweekRepo.refresh());
-  //
+
+  setInterval(() => tweekRepo.refresh(), 1000);
 
   return tweekRepo;
 }
