@@ -29,19 +29,18 @@ const ItemsList = glamorous.div(
 );
 
 
-const App = ({clickEnabled, clickMessage}) => {
+const App = ({enabled, message}) => {
 
-  const onClick = ()=> alert(clickMessage);
+  const onClick = ()=> alert(message);
 
   return (
   <Shop>
     <Header>Tweek Shop</Header>
-    <ItemsList>{items.map(({ id, ...props }) => <Product key={id} {...props} onClick={clickEnabled && onClick} />)}</ItemsList>
+    <ItemsList>{items.map(({ id, ...props }) => <Product key={id} {...props} onClick={enabled && onClick} />)}</ItemsList>
   </Shop>
 )
   };
 
 export default compose(
-  withTweekKeys('shop/view/click_enabled'),
-  withTweekKeys('shop/view/click_message'),
+  withTweekKeys('shop/click/_'),
   )(App);
