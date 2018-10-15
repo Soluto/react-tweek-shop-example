@@ -48,8 +48,8 @@ const Thumbnail = glamorous.img(
   ({ theme: { layouts } }) => layouts.thumbnail,
 );
 
-const Product = ({ displayName, image, description, price, rating }) => (
-  <Container>
+const Product = ({ displayName, image, description, price, rating, onClick }) => (
+  <Container onClick={onClick}>
     <DisplayName>{displayName}</DisplayName>
     <Description>{description}</Description>
     <Price>{price}</Price>
