@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { branch, compose, renderNothing } from 'recompose';
-import { withTweekKeys } from 'react-tweek';
+import TweekContext from '../TweekContext';
 import { withColors, withLayouts } from '../ThemeProvider';
 
 const Container = withLayouts(styled.div`
@@ -72,6 +72,9 @@ const Rating = ({ rating }) => (
   </Container>
 );
 
-export default compose(withTweekKeys('shop/rating/is_enabled'), branch(props => !props.isEnabled, renderNothing))(
+export default compose(
+  TweekContext.withTweekKeys({isEnabled: 'shop/rating/is_enabled'}),
+  branch(props => !props.isEnabled, renderNothing)
+)(
   Rating,
 );
