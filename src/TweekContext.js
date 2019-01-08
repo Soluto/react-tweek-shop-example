@@ -1,12 +1,12 @@
-import { createTweekContext } from 'react-tweek';
-import { createTweekClient, VersionWatcher } from 'tweek-client';
+import {createTweekContext} from 'react-tweek';
+import {createTweekClient, VersionWatcher} from 'tweek-client';
 import {TweekRepository} from 'tweek-local-cache';
 import config from './config.json';
 
 const baseServiceUrl = config.TweekUrl;
 
-const tweekClient = createTweekClient({ baseServiceUrl });
-const tweekRepo = new TweekRepository({ client: tweekClient });
+const tweekClient = createTweekClient({baseServiceUrl});
+const tweekRepo = new TweekRepository({client: tweekClient});
 
 /*
 tweekRepo.context = {

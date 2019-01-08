@@ -5,8 +5,8 @@ import App from './App';
 import './index.css';
 
 ReactDOM.render(
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>,
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>,
   document.getElementById('root'),
 );

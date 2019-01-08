@@ -1,5 +1,5 @@
 import React from 'react';
-import { compose } from 'recompose';
+import {compose} from 'recompose';
 import TweekContext from './TweekContext';
 import {colors, layouts} from './theme';
 import ensureProp from './utils/ensureProp';
@@ -10,23 +10,19 @@ ColorsContext.displayName = 'ColorsContext';
 export const LayoutContext = React.createContext(layouts.list);
 LayoutContext.displayName = 'LayoutContext';
 
-export const withColors = (Component) => (props) => (
-  <ColorsContext.Consumer>
-    {(colors) => (<Component {...props} colors={colors}/>)}
-  </ColorsContext.Consumer>
+export const withColors = Component => props => (
+  <ColorsContext.Consumer>{colors => <Component {...props} colors={colors} />}</ColorsContext.Consumer>
 );
 
-export const withLayouts = (Component) => (props) => (
-  <LayoutContext.Consumer>
-    {(layouts) => <Component {...props} layouts={layouts}/>}
-  </LayoutContext.Consumer>
+export const withLayouts = Component => props => (
+  <LayoutContext.Consumer>{layouts => <Component {...props} layouts={layouts} />}</LayoutContext.Consumer>
 );
 
-export const withTheme = (Component) => (props) => (
+export const withTheme = Component => props => (
   <ColorsContext.Consumer>
-    {(colors) => (
+    {colors => (
       <LayoutContext.Consumer>
-        {(layouts) => <Component {...props} colors={colors} layouts={layouts}/>}
+        {layouts => <Component {...props} colors={colors} layouts={layouts} />}
       </LayoutContext.Consumer>
     )}
   </ColorsContext.Consumer>
@@ -34,9 +30,7 @@ export const withTheme = (Component) => (props) => (
 
 const ThemeProvider = ({children, theme, layout}) => (
   <ColorsContext.Provider value={colors[theme]}>
-    <LayoutContext.Provider value={layouts[layout]}>
-    {children}
-    </LayoutContext.Provider>
+    <LayoutContext.Provider value={layouts[layout]}>{children}</LayoutContext.Provider>
   </ColorsContext.Provider>
 );
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Rating from './Rating';
-import { withLayouts, withTheme } from '../ThemeProvider';
+import {withLayouts, withTheme} from '../ThemeProvider';
 
 const Container = withTheme(styled.div`
   display: grid;
@@ -25,7 +25,7 @@ const Description = withLayouts(styled.div`
 const Price = styled.div`
   grid-area: price;
   &::before {
-    content: "$";
+    content: '$';
   }
 `;
 
@@ -36,13 +36,16 @@ const Thumbnail = withLayouts(styled.img`
   ${({layouts}) => layouts.thumbnail}
 `);
 
-const Product = ({ displayName, image, description, price, rating }) => (
+const Product = ({displayName, image, description, price, rating}) => (
   <Container>
     <DisplayName>{displayName}</DisplayName>
     <Description>{description}</Description>
     <Price>{price}</Price>
     <Rating rating={rating} />
-    <Thumbnail src={`https://raw.githubusercontent.com/Soluto/react-tweek-shop-example/master/public/${image}`} alt={displayName} />
+    <Thumbnail
+      src={`https://raw.githubusercontent.com/Soluto/react-tweek-shop-example/master/public/${image}`}
+      alt={displayName}
+    />
   </Container>
 );
 

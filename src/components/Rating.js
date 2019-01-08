@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { branch, compose, renderNothing } from 'recompose';
+import {branch, compose, renderNothing} from 'recompose';
 import TweekContext from '../TweekContext';
-import { withColors, withLayouts } from '../ThemeProvider';
+import {withColors, withLayouts} from '../ThemeProvider';
 
 const Container = withLayouts(styled.div`
   grid-area: rating;
@@ -16,7 +16,7 @@ const getStarFill = (type, fill) => {
     case 'half':
       return 'url(#grad1)';
     default:
-       return '#BBBBBB';
+      return '#BBBBBB';
   }
 };
 
@@ -38,8 +38,8 @@ const Star = props => (
   <StarContainer {...props} viewBox="0 0 50 48">
     <defs>
       <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style={{ stopColor: 'currentColor', stopOpacity: 1 }} />
-        <stop offset="100%" style={{ stopColor: '#BBBBBB', stopOpacity: 1 }} />
+        <stop offset="0%" style={{stopColor: 'currentColor', stopOpacity: 1}} />
+        <stop offset="100%" style={{stopColor: '#BBBBBB', stopOpacity: 1}} />
       </linearGradient>
     </defs>
     <g transform="matrix(0.5, 0, 0, 0.5, -27, -310)">
@@ -65,7 +65,7 @@ function renderStars(rating) {
   return result;
 }
 
-const Rating = ({ rating }) => (
+const Rating = ({rating}) => (
   <Container>
     {renderStars(rating)}
     <Span>{rating}</Span>
@@ -74,7 +74,5 @@ const Rating = ({ rating }) => (
 
 export default compose(
   TweekContext.withTweekKeys({isEnabled: 'shop/rating/is_enabled'}),
-  branch(props => !props.isEnabled, renderNothing)
-)(
-  Rating,
-);
+  branch(props => !props.isEnabled, renderNothing),
+)(Rating);
