@@ -18,7 +18,7 @@ tweekRepo.context = {
 
 // experimental - for hot reloading
 const tweekWatcher = new VersionWatcher(baseServiceUrl);
-tweekWatcher.subscribe(() => tweekRepo.refresh());
+tweekWatcher.subscribe(() => tweekRepo.expire());
 //
 
 export default createTweekContext(tweekRepo);
