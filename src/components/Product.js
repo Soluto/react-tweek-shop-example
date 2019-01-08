@@ -1,52 +1,40 @@
 import React from 'react';
-import glamorous from 'glamorous';
+import styled from 'styled-components';
 import Rating from './Rating';
+import { withLayouts, withTheme } from '../ThemeProvider';
 
-const Container = glamorous.div(
-  {
-    display: 'grid',
-  },
-  ({ theme: { colors, layouts } }) => ({
-    backgroundColor: colors.item.background,
-    boxShadow: colors.item.shadow,
-    ...layouts.item,
-  }),
-);
+const Container = withTheme(styled.div`
+  display: grid;
+  background-color: ${({colors}) => colors.item.background};
+  box-shadow: ${({colors}) => colors.item.shadow};
+  ${({layouts}) => layouts.item}
+`);
 
-const DisplayName = glamorous.div(
-  {
-    textTransform: 'uppercase',
-    fontSize: 'x-large',
-    gridArea: 'display-name',
-  },
-  ({ theme: { layouts } }) => layouts.displayName,
-);
+const DisplayName = withLayouts(styled.div`
+  text-transform: uppercase;
+  font-size: x-large;
+  grid-area: display-name;
+  ${({layouts}) => layouts.displayName}
+`);
 
-const Description = glamorous.div(
-  {
-    gridArea: 'description',
-  },
-  ({ theme: { layouts } }) => layouts.description,
-);
+const Description = withLayouts(styled.div`
+  grid-area: description;
+  ${({layouts}) => layouts.description}
+`);
 
-const Price = glamorous.div(
-  {
-    gridArea: 'price',
-    '&::before': {
-      content: '$',
-    },
-  },
-  ({ theme: { layouts } }) => layouts.price,
-);
+const Price = styled.div`
+  grid-area: price;
+  &::before {
+    content: "$";
+  }
+`;
 
-const Thumbnail = glamorous.img(
-  {
-    gridArea: 'thumbnail',
-    maxWidth: '100%',
-    maxHeight: '100%',
-  },
-  ({ theme: { layouts } }) => layouts.thumbnail,
-);
+const Thumbnail = withLayouts(styled.img`
+  grid-area: thumbnail;
+  max-width: 100%;
+  max-height: 100%;
+  ${({layouts}) => layouts.thumbnail}
+`);
 
 const Product = ({ displayName, image, description, price, rating }) => (
   <Container>

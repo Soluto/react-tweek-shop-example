@@ -27,53 +27,39 @@ export const colors = {
 
 export const layouts = {
   list: {
-    list: {
-      maxWidth: 800,
-    },
-    item: {
-      marginTop: 32,
-      padding: 16,
-      gridTemplateColumns: '64px 1fr auto',
-      gridTemplateRows: 'auto 16px auto 1fr',
-      gridColumnGap: 16,
-      gridTemplateAreas: `
-        "display-name display-name price"
-        ". . ."
-        "thumbnail description description"
-        "thumbnail rating rating"`,
-    },
-    thumbnail: {
-      height: 64,
-      alignSelf: 'center',
-    },
-    rating: {
-      alignSelf: 'start',
-    },
+    list: 'max-width: 800px;',
+    item: `
+    margin-top: 32px;
+    padding: 16px;
+    grid-template-columns: 64px 1fr auto;
+    grid-template-rows: auto 16px auto 1fr;
+    grid-column-gap: 16px;
+    grid-template-areas: 
+      "display-name display-name price"
+      ". . ."
+      "thumbnail description description"
+      "thumbnail rating rating";
+    `,
+    thumbnail: 'height: 64px; align-self: center;',
+    rating: 'align-self: start;',
   },
   thumbnails: {
-    list: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      maxWidth: 912,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    item: {
-      margin: 8,
-      padding: 16,
-      width: 256,
-      height: 256,
-      gridTemplateColumns: '1fr auto',
-      gridTemplateRows: 'auto auto 1fr auto auto',
-      gridTemplateAreas: `
-        "display-name"
-        "price"
-        "thumbnail"
-        "description"
-        "rating"`,
-    },
-    thumbnail: {
-      justifySelf: 'center',
-    },
+    list: 'display: flex; flex-wrap: wrap; max-width: 912px; align-items: center; justify-content: center;',
+    item: `
+    margin: 8px;
+    padding: 16px;
+    width: 256px;
+    height: 256px;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-areas: 
+      "display-name"
+      "price"
+      "thumbnail"
+      "description"
+      "rating";
+    `,
+    thumbnail: 'justify-self: center;',
+    rating: '',
   },
 };
