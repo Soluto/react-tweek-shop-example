@@ -6,7 +6,7 @@ import './index.css';
 import TweekContextSelector from './debug/TweekContextSelector';
 
 ReactDOM.render(
-  <React.Fragment>>
+  <React.Fragment>
     <TweekContextSelector />
     <ThemeProvider>
       <App />
