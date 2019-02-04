@@ -13,7 +13,7 @@ export default class TweekContextSelector extends Component {
                 <input
                   placeholder="User Id"
                   type="text"
-                  style={{fontSize: 24}}
+                  style={{fontSize: 24, minWidth:50}}
                   onChange={e => {
                     repo.updateContext(ctx => ({user: {...ctx.user, id: e.target.value}}));
                     this.forceUpdate();
