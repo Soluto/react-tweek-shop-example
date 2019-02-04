@@ -6,7 +6,7 @@ export default class TweekContextSelector extends Component {
     return (
       <TweekContext.Consumer>
         {repo => (
-          <div style={{backgroundColor: 'rgb(0, 174, 239)', padding: 10}}>
+          <div style={{backgroundColor: 'rgb(0, 174, 239)', borderBottom: '3px inset #CCCCCC', padding: 10}}>
             <div style={{maxWidth: 600, margin: '0 auto', fontFamily: 'calibri; sans-serif', color: '#696969'}}>
               <div style={{color: 'white', textAlign: 'center', fontSize: 16, margin: 4}}>Render app as user:</div>
               <div style={{display: 'flex', justifyContent: 'space-around'}}>
@@ -29,7 +29,7 @@ export default class TweekContextSelector extends Component {
                   value={repo && repo._context.user.planet}
                 >
                   <option value="" disabled selected>
-                    Select planet
+                    Select a planet
                   </option>
                   <option>Venus</option>
                   <option>Earth</option>
