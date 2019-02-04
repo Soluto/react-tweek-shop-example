@@ -1,35 +1,34 @@
 import React from 'react';
-import glamorous from 'glamorous';
+import styled from 'styled-components';
 import Product from './components/Product';
 import items from './items.json';
+import {withColors, withLayouts} from './ThemeProvider';
 
-const Shop = glamorous.div(
-  {
-    padding: '32px 64px',
-  },
-  ({ theme }) => ({
-    backgroundColor: theme.colors.background,
-    color: theme.colors.color,
-  }),
-);
+const Shop = withColors(styled.div`
+  padding: 32px 64px;
+  background-color: ${({colors}) => colors.background};
+  color: ${({colors}) => colors.color};
+`);
 
-const Header = glamorous.div({
-  textTransform: 'uppercase',
-  fontSize: 'xx-large',
-  textAlign: 'center',
-});
+const Header = styled.div`
+  text-transform: uppercase;
+  font-size: xx-large;
+  text-align: center;
+`;
 
-const ItemsList = glamorous.div(
-  {
-    margin: 'auto',
-  },
-  ({ theme: { layouts } }) => layouts.list,
-);
+const ItemsList = withLayouts(styled.div`
+  margin: auto;
+  ${({layouts}) => layouts.list}
+`);
 
 const App = () => (
   <Shop>
     <Header>Tweek Shop</Header>
-    <ItemsList>{items.map(({ id, ...props }) => <Product key={id} {...props} />)}</ItemsList>
+    <ItemsList>
+      {items.map(({id, ...props}) => (
+        <Product key={id} {...props} />
+      ))}
+    </ItemsList>
   </Shop>
 );
 

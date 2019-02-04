@@ -1,51 +1,45 @@
 import React from 'react';
-import glamorous from 'glamorous';
-import { branch, compose, renderNothing } from 'recompose';
-import { withTweekKeys } from 'react-tweek';
+import styled from 'styled-components';
+import {branch, compose, renderNothing} from 'recompose';
+import TweekContext from '../TweekContext';
+import {withColors, withLayouts} from '../ThemeProvider';
 
-const Container = glamorous.div(
-  {
-    gridArea: 'rating',
-  },
-  ({ theme: { layouts } }) => layouts.rating,
-);
+const Container = withLayouts(styled.div`
+  grid-area: rating;
+  ${({layouts}) => layouts.rating}
+`);
 
-const StarContainer = glamorous.svg(
-  {
-    stroke: 'black',
-    strokeWidth: 3,
-    height: '1em',
-    margin: '0 1px',
-  },
-  ({ theme: { colors }, type }) => {
-    let fill;
-    switch (type) {
-      case 'full':
-        fill = colors.star.fill;
-        break;
-      case 'half':
-        fill = 'url(#grad1)';
-        break;
-      default:
-        fill = '#BBBBBB';
-        break;
-    }
+const getStarFill = (type, fill) => {
+  switch (type) {
+    case 'full':
+      return fill;
+    case 'half':
+      return 'url(#grad1)';
+    default:
+      return '#BBBBBB';
+  }
+};
 
-    return { ...colors.star, fill, color: colors.star.fill };
-  },
-);
+const StarContainer = withColors(styled.svg`
+  stroke: ${({colors}) => colors.star.stroke};
+  stroke-width: 3px;
+  height: 1em;
+  margin: 0 1px;
+  color: ${({colors}) => colors.star.fill};
+  fill: ${({colors, type}) => getStarFill(type, colors.star.fill)};
+`);
 
-const Span = glamorous.span({
-  verticalAlign: 'text-bottom',
-  marginLeft: 5,
-});
+const Span = styled.span`
+  vertical-align: text-bottom;
+  margin-left: 5px;
+`;
 
 const Star = props => (
   <StarContainer {...props} viewBox="0 0 50 48">
     <defs>
       <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style={{ stopColor: 'currentColor', stopOpacity: 1 }} />
-        <stop offset="100%" style={{ stopColor: '#BBBBBB', stopOpacity: 1 }} />
+        <stop offset="0%" style={{stopColor: 'currentColor', stopOpacity: 1}} />
+        <stop offset="100%" style={{stopColor: '#BBBBBB', stopOpacity: 1}} />
       </linearGradient>
     </defs>
     <g transform="matrix(0.5, 0, 0, 0.5, -27, -310)">
@@ -71,13 +65,14 @@ function renderStars(rating) {
   return result;
 }
 
-const Rating = ({ rating }) => (
+const Rating = ({rating}) => (
   <Container>
     {renderStars(rating)}
     <Span>{rating}</Span>
   </Container>
 );
 
-export default compose(withTweekKeys('shop/rating/is_enabled'), branch(props => !props.isEnabled, renderNothing))(
-  Rating,
-);
+export default compose(
+  TweekContext.withTweekKeys({isEnabled: 'shop/rating/is_enabled'}),
+  branch(props => !props.isEnabled, renderNothing),
+)(Rating);

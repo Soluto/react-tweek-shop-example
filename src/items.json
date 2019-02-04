@@ -34,8 +34,7 @@
   {
     "id": "sonic-screwdriver",
     "displayName": "Sonic Screwdriver",
-    "description":
-      "A multifunctional tool that can hack, disable, activate, and otherwise control technology from almost every era",
+    "description": "A multifunctional tool that can hack, disable, activate, and otherwise control technology from almost every era",
     "price": "60.00",
     "rating": 3.8,
     "image": "/images/sonic-screwdriver.jpg"
@@ -43,8 +42,7 @@
   {
     "id": "star-destroyer",
     "displayName": "Star Destroyer",
-    "description":
-      "A moon-sized, deep-space mobile battle station, designed to fire a single planet-destroying superlaser powered by massive kyber crystals",
+    "description": "A moon-sized, deep-space mobile battle station, designed to fire a single planet-destroying superlaser powered by massive kyber crystals",
     "price": "850000000000000000.01",
     "rating": 2.3,
     "image": "/images/star-destroyer.png"
@@ -60,8 +58,7 @@
   {
     "id": "protoss-pylon",
     "displayName": "Protoss Pylon",
-    "description":
-      "Each pylon generates a short-ranged aura of energy, which can provide the power needed by structures and warp gates",
+    "description": "Each pylon generates a short-ranged aura of energy, which can provide the power needed by structures and warp gates",
     "price": 85.15,
     "rating": 3.1,
     "image": "/images/protoss-pylon.png"
@@ -69,8 +66,7 @@
   {
     "id": "magic-wand",
     "displayName": "Magic Wand",
-    "description":
-      "A thin, hand-held stick that may be transformed into other items, grow, vanish, move, display a will of its own, or behave magically in its own right",
+    "description": "A thin, hand-held stick that may be transformed into other items, grow, vanish, move, display a will of its own, or behave magically in its own right",
     "price": 134.16,
     "rating": 4.0,
     "image": "/images/magic-wand.jpg"
