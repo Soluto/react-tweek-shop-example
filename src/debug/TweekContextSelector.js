@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TweekContext from '../TweekContext';
 
-export default class extends Component {
+export default class TweekContextSelector extends Component {
   render() {
     return (
       <TweekContext.Consumer>
