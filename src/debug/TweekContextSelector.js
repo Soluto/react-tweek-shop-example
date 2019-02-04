@@ -31,6 +31,7 @@ export default class TweekContextSelector extends Component {
                   <option value="" disabled selected>
                     Select a planet
                   </option>
+                  <option>Mercury</option>
                   <option>Venus</option>
                   <option>Earth</option>
                   <option>Mars</option>
