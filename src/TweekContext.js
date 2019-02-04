@@ -6,18 +6,17 @@ import config from './config.json';
 const baseServiceUrl = config.TweekUrl;
 
 const tweekClient = createTweekClient({baseServiceUrl});
-const tweekRepo = new TweekRepository({client: tweekClient});
-
-/*
-tweekRepo.context = {
-  user: {
-    id: "john"
-  }
-};
-*/
+const tweekRepo = new TweekRepository({
+  client: tweekClient,
+  context: {
+    user: {
+      id: 'Jaime',
+    },
+  },
+});
 
 // experimental - for hot reloading
-const tweekWatcher = new VersionWatcher(baseServiceUrl);
+const tweekWatcher = new VersionWatcher(baseServiceUrl, 500);
 tweekWatcher.subscribe(() => tweekRepo.expire());
 //
 
