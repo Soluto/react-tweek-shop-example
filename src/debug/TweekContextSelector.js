@@ -22,13 +22,13 @@ export default class TweekContextSelector extends Component {
                 />
                 <select
                   onChange={e => {
-                    repo.updateContext(ctx => ({user: {...ctx.user, planet: e.target.value}}));
+                    repo.updateContext(ctx => ({user: {...ctx.user, planet: e.target.value || undefined}}));
                     this.forceUpdate();
                   }}
                   style={{fontSize: 24}}
                   value={repo && repo._context.user.planet}
                 >
-                  <option value="" disabled selected>
+                  <option value="" selected>
                     Select a planet
                   </option>
                   <option>Mercury</option>
@@ -42,7 +42,7 @@ export default class TweekContextSelector extends Component {
                 </select>
                 <select
                   onChange={e => {
-                    repo.updateContext(ctx => ({user: {...ctx.user, class: e.target.value}}));
+                    repo.updateContext(ctx => ({ user: { ...ctx.user, class: e.target.value || undefined}}));
                     this.forceUpdate();
                   }}
                   style={{fontSize: 24}}
